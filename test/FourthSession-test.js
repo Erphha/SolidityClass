@@ -27,15 +27,23 @@ describe("FourthSession", function () {
     await FourthSession.getOwnerOfNft(0);
 
     //Checking the withdraw function along with balances of owner(customers) and contract!
-    console.log("Balance of Owner: ", await owner.getBalance());
+    console.log(
+      "Balance of Owner: ",
+      ethers.BigNumber.from(await owner.getBalance()).toString()
+    );
     const contractAddress = FourthSession.address;
     console.log(
-      "Balance of Contract: ",
-      await ethers.provider.getBalance(contractAddress)
+      "Balance: ",
+      ethers.BigNumber.from(
+        await ethers.provider.getBalance(contractAddress)
+      ).toString()
     );
 
     //Running the withdraw!
     await FourthSession.withdraw();
-    console.log("Balance of Owner: ", await owner.getBalance());
+    console.log(
+      "Balance: ",
+      ethers.BigNumber.from(await owner.getBalance()).toString()
+    );
   });
 });
