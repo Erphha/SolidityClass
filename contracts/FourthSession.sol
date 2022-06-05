@@ -28,7 +28,7 @@ contract FourthSession {
 
     function setNewPrice(uint256 _newPrice) public {
         require(msg.sender == owner);
-        nftPrice = _newPrice;
+        nftPrice = _newPrice * 1 ether;
     }
 
     function withdraw() public {
