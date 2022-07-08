@@ -67,8 +67,7 @@ contract FifthSession{
         require(msg.value >= super_rarePrice);
     }
 
-    function withdraw() public onlyContractOwner{
-        uint balance = address(this).balance;
-        payable(msg.sender).transfer(balance);
-    }
+    
+        
+    
 }
